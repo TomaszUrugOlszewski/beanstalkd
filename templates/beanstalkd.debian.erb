@@ -11,7 +11,7 @@ DAEMONUSER=<%= @user %>
 # for a list of the available options. Uncomment the following line for
 # persistent job storage.
 
-BEANSTALKD_EXTRA="<% if @enable_binlog -%>-b <%= @binlog_directory -%><% end %> -z <%= @max_job_size %>"
+BEANSTALKD_EXTRA="<% if @enable_binlog -%>-b <%= @binlog_directory -%><% end %> -z <%= @max_job_size %> <%= @extra_options %>"
 
 <%if @daemon_options -%>
 DAEMON_OPTS="-l $BEANSTALKD_LISTEN_ADDR -p $BEANSTALKD_LISTEN_PORT $BEANSTALKD_EXTRA"

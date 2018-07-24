@@ -8,6 +8,7 @@ class beanstalkd::params {
   $service_ensure   = 'running'
   $service_enable   = true
   $max_job_size     = '65535'
+  $extra_options    = ''
 
   case $::osfamily {
     'Debian': {
